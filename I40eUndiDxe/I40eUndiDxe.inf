@@ -62,6 +62,9 @@
   # - 4244: conversion from ... to ..., possible loss of data
   MSFT:*_*_*_CC_FLAGS = /wd4055 /wd4244
 
+  # Allow use of extremely dodgy code
+  GCC:*_*_*_CC_FLAGS = -std=c99 -Wno-unused-function -Wno-incompatible-pointer-types -Wno-unused-but-set-variable -Wno-unused-value
+
 [BuildOptions.X64]
   *_*_*_CC_FLAGS = -D EFIX64
 
