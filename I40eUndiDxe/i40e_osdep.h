@@ -64,10 +64,13 @@ typedef INT16   s16;
 typedef UINT8   u8;
 typedef INT8    s8;
 
+#if defined __STDC_VERSION__ && __STDC_VERSION__ > 201710L
+/* bool, true and false are keywords.  */
+#else
 typedef BOOLEAN bool;
-
 #define false FALSE
 #define true  TRUE
+#endif
 
 #define INLINE
 

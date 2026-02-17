@@ -285,10 +285,13 @@ struct ice_lock {
 };
 
 
+#if defined __STDC_VERSION__ && __STDC_VERSION__ > 201710L
+/* bool, true and false are keywords.  */
+#else
 typedef BOOLEAN bool;
-
 #define false FALSE
 #define true  TRUE
+#endif
 
 #define ETH_ALEN 6
 

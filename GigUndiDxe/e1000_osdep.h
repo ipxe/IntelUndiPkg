@@ -68,10 +68,14 @@ typedef UINT16   u16;
 typedef INT16    s16;
 typedef UINT8    u8;
 typedef INT8     s8;
-typedef BOOLEAN  bool;
 
+#if defined __STDC_VERSION__ && __STDC_VERSION__ > 201710L
+/* bool, true and false are keywords.  */
+#else
+typedef BOOLEAN bool;
 #define true 1
 #define false 0
+#endif
 
 struct e1000_hw;
 
